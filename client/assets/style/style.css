@@ -7,6 +7,11 @@
   width: 1rem;
 }
 
+.meme {
+  height: 20vh;
+  object-fit: contain;
+}
+
 .button-glow {
   text-shadow: 1px 1px grey, 0px 0px 1px yellow;
 }

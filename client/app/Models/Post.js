@@ -27,7 +27,7 @@ export class Post {
           </div>
 
           <div class="card-body">
-            <img src="${this.postImg}" alt="CAT" class="img-fluid" />
+            <img src="${this.postImg}" alt="CAT" class="img-fluid meme" />
           </div>
 
           <div class="card-footer d-flex justify-content-between">

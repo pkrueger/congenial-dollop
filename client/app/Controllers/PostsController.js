@@ -22,4 +22,12 @@ export class PostsController {
       console.error(error);
     }
   }
+
+  async createPost(formData) {
+    try {
+      await postsService.createPost(formData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
