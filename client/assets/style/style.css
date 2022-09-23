@@ -1,0 +1,13 @@
+.nav-color {
+  background-color: rgb(212, 212, 32);
+}
+
+.cardProfilePic {
+  height: 1rem;
+  width: 1rem;
+}
+
+.button-glow {
+  text-shadow: 1px 1px grey, 0px 0px 1px yellow;
+
+}
