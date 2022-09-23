@@ -5,7 +5,8 @@ class PostsService {
   async getPost(postId) {
     const post = await dbContext.Post.findById(postId)
       .populate("likes")
-      .populate("dislikes");
+      .populate("dislikes")
+      .populate("memer")
     return post;
   }
   async getPosts() {
