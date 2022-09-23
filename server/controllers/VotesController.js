@@ -4,11 +4,24 @@ import BaseController from "../utils/BaseController.js";
 
 export class VotesController extends BaseController {
   constructor() {
-    super("api/posts");
+    super("api/posts/:postId");
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post("/:postId/like", this.addLike)
-      .post("/:postId/dislike", this.addDislike);
+      .post("/like", this.addLike)
+      .post("/dislike", this.addDislike)
+      .delete("/like", this.deleteLike)
+      .get("/likes", this.getlikes)
+  }
+  async getlikes(req, res, next) {
+
+  }
+  async deleteLike(req, res, next) {
+    try {
+      const like = await votesService.deleteLike(req.params, req.userInfo)
+      res.send("Like Removed")
+    } catch (error) {
+      next(error)
+    }
   }
   addDislike(req, res, next) {
     try {
@@ -30,4 +43,6 @@ export class VotesController extends BaseController {
       next(error);
     }
   }
+
+
 }
