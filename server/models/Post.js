@@ -3,7 +3,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 export const PostSchema = new Schema(
   {
-    postImg: { type: String, required: true, maxlength: 250 },
+    postImg: { type: String, required: true, maxlength: 500 },
     memerId: { type: ObjectId, required: true, ref: "Account" },
   },
   {

@@ -1,6 +1,9 @@
 import { dbContext } from "../db/DbContext.js";
 
 class VotesService {
+  async getLikes(postId) {
+
+  }
   async deleteLike(params, userInfo) {
 
   }
