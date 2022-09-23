@@ -1,5 +1,5 @@
-import { UnAuthorized } from "../../../../gregslist-auth/server/utils/Errors.js";
 import { dbContext } from "../db/DbContext.js";
+import { UnAuthorized } from "../utils/Errors.js";
 
 class PostsService {
   async getPost(postId) {
@@ -22,9 +22,9 @@ class PostsService {
     const post = await this.getPost(postId);
     // @ts-ignore
     if (userInfo.id != post.memerId) {
-      throw new UnAuthorized('Not yur meme')
+      throw new UnAuthorized("Not yur meme");
     }
-    await dbContext.Post.findByIdAndDelete(postId)
+    await dbContext.Post.findByIdAndDelete(postId);
   }
 }
 
