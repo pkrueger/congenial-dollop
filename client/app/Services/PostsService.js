@@ -4,6 +4,7 @@ import { server } from "../Services/AxiosService.js";
 
 class PostsService {
   async createPost(formData) {
+    console.log("Hello");
     const res = await server.post("api/posts", formData);
     console.log(res.data);
     appState.posts = [...appState.posts, new Post(res.data)];
