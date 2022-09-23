@@ -7,7 +7,7 @@ function _drawPosts() {
   let template = "";
   appState.posts.forEach((p) => (template += p.MemeCardTemplate));
   setHTML("memeCard", template);
-  console.log("trying to draw");
+  console.log("draw posts");
 }
 
 export class PostsController {
@@ -18,7 +18,7 @@ export class PostsController {
 
   async getPosts() {
     try {
-      console.log("Got here");
+      console.log("Getting posts");
       await postsService.getPosts();
     } catch (error) {
       console.error(error);
@@ -33,7 +33,7 @@ export class PostsController {
       const form = window.event.target;
       const formData = getFormData(form);
       await postsService.createPost(formData);
-      console.log("Data coming in");
+      console.log("creating post");
       // @ts-ignore
       form.reset();
     } catch (error) {
