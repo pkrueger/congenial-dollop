@@ -42,8 +42,7 @@ export class PostsController extends BaseController {
 
   async removePost(req, res, next) {
     try {
-      req.body.memeId = req.userInfo.id;
-      await postsService.removePost(req.body);
+      await postsService.removePost(req.params.postId, req.userInfo);
       res.send("deleted");
     } catch (error) {
       next(error);
