@@ -4,7 +4,7 @@ import BaseController from "../utils/BaseController.js";
 
 export class VotesController extends BaseController {
   constructor() {
-    super("api/posts/:postId");
+    super("api/votes/:postId");
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post("/like", this.addLike)
