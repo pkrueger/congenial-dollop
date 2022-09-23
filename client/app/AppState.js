@@ -1,46 +1,39 @@
-import { dev } from './env.js'
-import { EventEmitter } from './Utils/EventEmitter.js'
-import { isValidProp } from './Utils/isValidProp.js'
+import { dev } from "./env.js";
+import { Post } from "./Models/Post.js";
+import { EventEmitter } from "./Utils/EventEmitter.js";
+import { isValidProp } from "./Utils/isValidProp.js";
+import { loadState } from "./Utils/Store.js";
 
 class AppState extends EventEmitter {
-  user = {}
+  user = {};
 
   /** @type {import('./Models/Account.js').Account} */
   // @ts-ignore
-  account = {}
+  account = {};
 
   /** @type {import('./Models/Value').Value[]} */
-  values = []
+  values = [];
 
-  socketData = []
+  socketData = [];
 
-
-
-  /** @type {import('./Models/Post').Post[]} */
-  posts = []
+  /** @type {import('./Models/Post.js').Post[]} */
+  posts = [];
 }
-
-
-
-
-
-
-
 
 export const appState = new Proxy(new AppState(), {
   get(target, prop) {
-    isValidProp(target, prop)
-    return target[prop]
+    isValidProp(target, prop);
+    return target[prop];
   },
   set(target, prop, value) {
-    isValidProp(target, prop)
-    target[prop] = value
-    target.emit(prop, value)
-    return true
-  }
-})
+    isValidProp(target, prop);
+    target[prop] = value;
+    target.emit(prop, value);
+    return true;
+  },
+});
 
 if (dev) {
   // @ts-ignore
-  window.appState = appState
+  window.appState = appState;
 }
