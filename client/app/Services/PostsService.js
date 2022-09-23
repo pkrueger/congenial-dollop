@@ -3,9 +3,12 @@ import { Post } from "../Models/Post.js";
 import { server } from "../Services/AxiosService.js";
 
 class PostsService {
-  createPost() {
-    throw new Error("Method not implemented.");
+  async createPost(formData) {
+    const res = await server.post("api/posts", formData);
+    console.log(res.data);
+    appState.posts = [...appState.posts, new Post(res.data)];
   }
+
   async getPosts() {
     console.log("got here too");
     const res = await server.get("api/posts");

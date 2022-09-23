@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js";
 import { postsService } from "../Services/PostsService.js";
+import { getFormData } from "../Utils/FormHandler.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawPosts() {
@@ -23,9 +24,17 @@ export class PostsController {
     }
   }
 
-  async createPost(formData) {
+  async createPost() {
     try {
+      // @ts-ignore
+      window.event.preventDefault();
+      // @ts-ignore
+      const form = window.event.target;
+      const formData = getFormData(form);
       await postsService.createPost(formData);
+      console.log("Data coming in");
+      // @ts-ignore
+      form.reset();
     } catch (error) {
       console.error(error);
     }
