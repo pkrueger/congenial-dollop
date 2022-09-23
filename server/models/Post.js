@@ -12,11 +12,18 @@ export const PostSchema = new Schema(
   }
 );
 
-PostSchema.virtual("votes", {
+PostSchema.virtual("likes", {
   localField: "_id",
   foreignField: "postId",
   count: true,
-  ref: "Vote",
+  ref: "Like",
+});
+
+PostSchema.virtual("dislikes", {
+  localField: "_id",
+  foreignField: "postId",
+  count: true,
+  ref: "Dislike",
 });
 
 PostSchema.virtual("comments", {
@@ -24,3 +31,10 @@ PostSchema.virtual("comments", {
   foreignField: "postId",
   ref: "Comment",
 });
+
+PostSchema.virtual("memer", {
+  localField: "memerId",
+  foreignField: "_id",
+  justOne: true,
+  ref: "Account"
+})

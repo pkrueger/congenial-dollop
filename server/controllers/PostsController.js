@@ -7,9 +7,15 @@ export class PostsController extends BaseController {
     super("api/posts");
     this.router
       .get("", this.getPosts)
+      .get("/:postId", this.getPost)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.addPost);
+
   }
+  getPost(req, res, next) {
+
+  }
+
   async getPosts(req, res, next) {
     try {
       const posts = await postsService.getPosts();
