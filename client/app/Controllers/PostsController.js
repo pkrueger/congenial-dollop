@@ -31,8 +31,8 @@ export class PostsController {
       // @ts-ignore
       const form = window.event.target;
       const formData = getFormData(form);
-      await postsService.createPost(formData);
       console.log("Data coming in");
+      await postsService.createPost(formData);
       // @ts-ignore
       form.reset();
     } catch (error) {
