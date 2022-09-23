@@ -53,29 +53,44 @@
 
 
 
+
+
+
   <main id="app">
     <div class="container">
       <div class="row mt-5 justify-content-between gap-5" id="memeCard">
 
-        <!-- SECTION: meme cards template -->
+        <!-- ANCHOR: meme cards template -->
         <div class="col-3">
           <div class="card">
             <div class="card-header bg-secondary">
-              <img src="//thiscatdoesnotexist.com" alt="profile cat" class="img-fluid cardProfilePic rounded" />
+
+
+              <!-- SECTION: name of whoever posted the meme -->
+              <!-- TODO: maybe display the posters info? -->
+              <img src="//thiscatdoesnotexist.com" alt="profile cat"
+                class="img-fluid cardProfilePic rounded selectable" />
               creator name
             </div>
 
+
+            <!-- SECTION: the MEME -->
             <div class="card-body">
               <img src="//thiscatdoesnotexist.com" alt="CAT" class="img-fluid" />
             </div>
 
+
+            <!-- SECTION: message button -->
+            <!-- TODO: toggle between comments and meme pages -->
             <div class="card-footer d-flex justify-content-between fs-3">
-              <div><i class="fa-solid fa-message"></i></div>
+              <div><i class="fa-solid fa-message selectable"></i></div>
               <div class="d-flex gap-5">
 
+
+                <!-- SECTION: likes/dislikes -->
                 <!-- TODO: make the arrows change the numbers... v -->
-                <div><i class="fa-solid fa-arrow-up fs-3">6</i></div>
-                <div><i class="fa-solid fa-arrow-down fs-3">9</i></div>
+                <div><i class="fa-solid fa-arrow-up fs-3 selectable"></i><span class="text-green"> 6</span></div>
+                <div><i class="fa-solid fa-arrow-down fs-3 selectable"></i><span class="text-red"> 9</span></div>
               </div>
             </div>
           </div>
@@ -84,18 +99,16 @@
       </div>
     </div>
 
+
     <!-- SECTION: add meme button -->
     <div class="row fs-1 sticky-bottom m-3 pb-2">
       <div class="col-12 d-flex justify-content-end">
-        <i class="fa-solid fa-circle-plus"></i>
+        <i class="fa-solid fa-circle-plus selectable"></i>
       </div>
     </div>
   </main>
 
 
-
-
-  <footer class="container-fluid"></footer>
 
 
 

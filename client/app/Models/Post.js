@@ -20,7 +20,7 @@ export class Post {
     <div class="col-3">
       <div class="card">
         <div class="card-header bg-secondary">
-          <img src="${this.memerImg}" alt="profile cat" class="img-fluid cardProfilePic rounded" />
+          <img src="${this.memerImg}" alt="profile cat" class="img-fluid cardProfilePic rounded selectable" />
           ${this.memerName}
         </div>
 
@@ -29,19 +29,19 @@ export class Post {
         </div>
 
         <div class="card-footer d-flex justify-content-between">
-          <div><i class="fa-solid fa-message"></i></div>
+          <div><i class="fa-solid fa-message selectable"></i></div>
           <div class="d-flex gap-5">
 
             <div>
-            <i class="fa-solid fa-arrow-up">
-            <span>${this.likes}</span>
-            </i>
+              <i class="fa-solid fa-arrow-up selectable">
+              </i>
+                <span class="text-green">${this.likes}</span>
             </div>
 
             <div>
-            <i class="fa-solid fa-arrow-down">
-            <span>${this.dislikes}</span>
-            </i>
+              <i class="fa-solid fa-arrow-down selectable">
+              </i>
+                <span class="text-red">${this.dislikes}</span>
             </div>
           </div>
         </div>
