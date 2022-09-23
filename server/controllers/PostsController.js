@@ -9,7 +9,8 @@ export class PostsController extends BaseController {
       .get("", this.getPosts)
       .get("/:postId", this.getPost)
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post("", this.addPost);
+      .post("", this.addPost)
+      .delete("/:postId", this.removePost);
   }
   async getPost(req, res, next) {
     try {
@@ -34,6 +35,16 @@ export class PostsController extends BaseController {
       req.body.memerId = req.userInfo.id;
       const post = await postsService.addPost(req.body);
       res.send(post);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async removePost(req, res, next) {
+    try {
+      req.body.memeId = req.userInfo.id;
+      await postsService.removePost(req.body);
+      res.send("deleted");
     } catch (error) {
       next(error);
     }

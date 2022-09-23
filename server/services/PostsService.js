@@ -16,6 +16,10 @@ class PostsService {
     const post = dbContext.Post.create(data);
     return post;
   }
+
+  removePost(data) {
+    dbContext.Post.delete;
+  }
 }
 
 export const postsService = new PostsService();
