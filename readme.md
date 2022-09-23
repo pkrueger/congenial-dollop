@@ -58,8 +58,7 @@ function extendUserInfo(user, context, callback) {
     context.idToken[`${namespace}/${key}`] = user.app_metadata[key];
   }
   context.idToken[`${namespace}/roles`] = context.authorization.roles;
-  context.idToken[`${namespace}/permissions`] =
-    context.authorization.permissions;
+  context.idToken[`${namespace}/permissions`] = context.authorization.permissions;
   context.idToken[`${namespace}/user_metadata`] = user.user_metadata;
 
   if (!user.app_metadata.new) {
@@ -77,12 +76,7 @@ function extendUserInfo(user, context, callback) {
 
   function generateId() {
     let timestamp = ((new Date().getTime() / 1000) | 0).toString(16);
-    return (
-      timestamp +
-      "xxxxxxxxxxxxxxxx"
-        .replace(/[x]/g, () => ((Math.random() * 16) | 0).toString(16))
-        .toLowerCase()
-    );
+    return timestamp + "xxxxxxxxxxxxxxxx".replace(/[x]/g, () => ((Math.random() * 16) | 0).toString(16)).toLowerCase();
   }
 }
 ```
@@ -111,20 +105,12 @@ app.use("/user-profile", getAuthorizedUserInfo, (req, res, next) => {
 // validates the request token, extracts the userIdentity and userInfo
 // fails if role is not found in the token
 // Enable RBAC or Extended Rules
-app.use(
-  "/admins-only",
-  auth0Provider.hasRoles("admin"),
-  (req, res, next) => {}
-);
+app.use("/admins-only", auth0Provider.hasRoles("admin"), (req, res, next) => {});
 
 // validates the request token, extracts the userIdentity and userInfo
 // fails if any permission is not found in the token
 // Enable RBAC or Extended Rules
-app.use(
-  "/messages",
-  auth0Provider.hasPermissions(["read:messages", "write:messages"]),
-  (req, res, next) => {}
-);
+app.use("/messages", auth0Provider.hasPermissions(["read:messages", "write:messages"]), (req, res, next) => {});
 
 //recommended default error handler
 app.use((error, req, res, next) => {
