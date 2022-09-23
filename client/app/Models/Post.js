@@ -2,9 +2,9 @@ export class Post {
   constructor(data) {
     this.id = data.id;
 
-    this.memerImg = data.memer.picture;
-    this.memerName = data.memer.name;
-    this.memerID = data.memer.id;
+    // this.memerImg = data.memer.picture;
+    // this.memerName = data.memer.name;
+    this.memerID = data.memerId;
 
     this.postImg = data.postImg;
     this.postID = data.postID;
@@ -19,11 +19,11 @@ export class Post {
         <div class="card">
           <div class="card-header bg-secondary">
             <img
-              src="${this.memerImg}"
+              src="${this.postImg}"
               alt="profile cat"
               class="img-fluid cardProfilePic rounded selectable"
             />
-            ${this.memerName}
+            ${this.memerID}
           </div>
 
           <div class="card-body">

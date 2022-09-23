@@ -1,6 +1,8 @@
 import { dev } from './env.js'
+import { Post } from './Models/Post.js'
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
+import { loadState } from './Utils/Store.js'
 
 class AppState extends EventEmitter {
   user = {}
@@ -16,8 +18,8 @@ class AppState extends EventEmitter {
 
 
 
-  /** @type {import('./Models/Post').Post[]} */
-  posts = []
+  /** @type {import('./Models/Post.js').Post[]} */
+  posts = loadState("posts", Post)
 }
 
 
