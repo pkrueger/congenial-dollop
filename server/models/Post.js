@@ -36,5 +36,5 @@ PostSchema.virtual("memer", {
   localField: "memerId",
   foreignField: "_id",
   justOne: true,
-  ref: "Account"
-})
+  ref: "Account",
+});

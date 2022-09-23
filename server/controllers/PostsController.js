@@ -10,10 +10,14 @@ export class PostsController extends BaseController {
       .get("/:postId", this.getPost)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post("", this.addPost);
-
   }
-  getPost(req, res, next) {
-
+  async getPost(req, res, next) {
+    try {
+      const post = await postsService.getPost(req.params.postId);
+      res.send(post);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async getPosts(req, res, next) {

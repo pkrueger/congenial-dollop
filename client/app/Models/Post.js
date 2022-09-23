@@ -46,6 +46,6 @@ export class Post {
           </div>
         </div>
       </div>
-    `;
+    `
   }
 }
