@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <script src="https://kit.fontawesome.com/62ea33de3c.js" crossorigin="anonymous"></script>
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
@@ -13,6 +14,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
   <title>congenial-dollop</title>
 </head>
 
@@ -20,10 +22,37 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-
+    <nav class="navbar navbar-expand p-2 nav-color">
+      <a class="navbar-brand mt-1 mb-1" href="#">
+        <strong>The Memes Forum</strong>
       </a>
+
+      <!-- SECTION: Nav Buttons -->
+      <div>
+        <button id="" class="rounded bg-dark text-warning button-glow">
+          Spongebob Memes
+        </button>
+
+        <button id="" class="rounded bg-dark text-success button-glow">
+          Spongebob Memes
+        </button>
+
+        <button id="" class="rounded bg-dark text-danger button-glow">
+          Spongebob Memes
+        </button>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!-- NAVLINKS -->
+        </div>
+      </div>
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
 
@@ -31,13 +60,120 @@
 
 
   <main id="app">
+    <div class="container">
+      <div class="row mt-5 justify-content-between gap-5">
+
+        <!-- SECTION: meme cards template -->
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <img src="//thiscatdoesnotexist.com" alt="profile cat" class="img-fluid cardProfilePic rounded">
+              creator name
+            </div>
+
+            <div class="card-body">
+              <img src="//thiscatdoesnotexist.com" alt="CAT" class="img-fluid">
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+              <div><i class="fa-solid fa-message"></i></div>
+              <div class="d-flex gap-5">
+                <!-- TODO: make the arrows change the numbers -->
+                <div><i class="fa-solid fa-arrow-up">6</i></div>
+                <div><i class="fa-solid fa-arrow-down">9</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- #region    SECTION: test cards, delete these later -->
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <img src="//thiscatdoesnotexist.com" alt="profile cat" class="img-fluid cardProfilePic rounded">
+              creator name
+            </div>
+
+            <div class="card-body">
+              <img src="//thiscatdoesnotexist.com" alt="CAT" class="img-fluid">
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+              <div><i class="fa-solid fa-message"></i></div>
+              <div class="d-flex gap-5">
+                <!-- TODO: make the arrows change the numbers -->
+                <div><i class="fa-solid fa-arrow-up">6</i></div>
+                <div><i class="fa-solid fa-arrow-down">9</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <img src="//thiscatdoesnotexist.com" alt="profile cat" class="img-fluid cardProfilePic rounded">
+              creator name
+            </div>
+
+            <div class="card-body">
+              <img src="//thiscatdoesnotexist.com" alt="CAT" class="img-fluid">
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+              <div><i class="fa-solid fa-message"></i></div>
+              <div class="d-flex gap-5">
+                <!-- TODO: make the arrows change the numbers -->
+                <div><i class="fa-solid fa-arrow-up">6</i></div>
+                <div><i class="fa-solid fa-arrow-down">9</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-3">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <img src="//thiscatdoesnotexist.com" alt="profile cat" class="img-fluid cardProfilePic rounded">
+              creator name
+            </div>
+
+            <div class="card-body">
+              <img src="//thiscatdoesnotexist.com" alt="CAT" class="img-fluid">
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+              <div><i class="fa-solid fa-message"></i></div>
+              <div class="d-flex gap-5">
+                <!-- TODO: make the arrows change the numbers -->
+                <div><i class="fa-solid fa-arrow-up">6</i></div>
+                <div><i class="fa-solid fa-arrow-down">9</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--#endregion    STUB: end of test cards -->
+
+      </div>
+    </div>
+
+    <div class="row fs-1 sticky-bottom m-3 pb-2">
+      <div class="col-12 d-flex justify-content-end">
+        <i class="fa-solid fa-circle-plus"></i>
+      </div>
+    </div>
   </main>
 
 
 
 
-  <footer>
+
+  <footer class="container-fluid">
   </footer>
+
 
 
 
