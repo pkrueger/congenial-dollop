@@ -13,7 +13,7 @@ export class VotesController extends BaseController {
       .get("/likes", this.getlikes)
   }
   async getlikes(req, res, next) {
-
+    const likes = await votesService.getLikes(req.params.postId)
   }
   async deleteLike(req, res, next) {
     try {
