@@ -9,6 +9,7 @@ function _drawPosts() {
   setHTML("memeCard", template);
   console.log("trying to draw");
 }
+
 export class PostsController {
   constructor() {
     this.getPosts();
