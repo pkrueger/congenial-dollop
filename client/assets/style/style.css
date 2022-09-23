@@ -9,5 +9,16 @@
 
 .button-glow {
   text-shadow: 1px 1px grey, 0px 0px 1px yellow;
+}
 
+.text-color-1 {
+  color: rgb(238, 238, 2);
+}
+
+.text-color-2 {
+  color: red;
+}
+
+.text-color-3 {
+  color: rgb(4, 208, 4);
 }
