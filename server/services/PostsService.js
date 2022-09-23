@@ -11,6 +11,7 @@ class PostsService {
   }
   async getPosts() {
     const posts = dbContext.Post.find()
+      // Can you see thisVVV
       .populate("likes")
       .populate("dislikes")
       .populate("memer")
