@@ -7,8 +7,9 @@ function _drawPosts() {
   let template = "";
   appState.posts.forEach((p) => (template += p.MemeCardTemplate));
   setHTML("memeCard", template);
-  console.log("trying to draw");
+  console.log("draw posts");
 }
+
 export class PostsController {
   constructor() {
     this.getPosts();
@@ -17,7 +18,7 @@ export class PostsController {
 
   async getPosts() {
     try {
-      console.log("Got here");
+      console.log("Getting posts");
       await postsService.getPosts();
     } catch (error) {
       console.error(error);

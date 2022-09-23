@@ -1,3 +1,4 @@
+import { UnAuthorized } from "../../../../gregslist-auth/server/utils/Errors.js";
 import { dbContext } from "../db/DbContext.js";
 
 class PostsService {
@@ -17,8 +18,13 @@ class PostsService {
     return post;
   }
 
-  removePost(data) {
-    dbContext.Post.delete;
+  async removePost(postId, userInfo) {
+    const post = await this.getPost(postId);
+    // @ts-ignore
+    if (userInfo.id != post.memerId) {
+      throw new UnAuthorized('Not yur meme')
+    }
+    await dbContext.Post.findByIdAndDelete(postId)
   }
 }
 
