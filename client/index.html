@@ -87,67 +87,41 @@
       </div>
     </div>
 
-<<<<<<< HEAD
     <!-- SECTION: add meme button -->
     <div class="row fs-1 sticky-bottom m-3 pb-2">
       <div class="col-12 d-flex justify-content-end">
-        <i class="fa-solid fa-circle-plus selectable"></i>
-=======
-      <!-- SECTION: add meme button -->
-      <div class="row fs-1 sticky-bottom m-3 pb-2">
-        <div class="col-12 d-flex justify-content-end">
-          <i class="fa-solid fa-circle-plus selectable" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-        </div>
->>>>>>> d02730b584a4990cb0519e97702560e54e26e820
+        <i class="fa-solid fa-circle-plus selectable" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
       </div>
+    </div>
     </div>
   </main>
 
-<<<<<<< HEAD
-  <form onsubmit="app.postsController.addPost()">
-    <div class="modal-body">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="name" name="name" placeholder="Post Title" />
-        <label for="name">Post Title</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input required type="url" class="form-control" id="img" name="img" placeholder="Post Image" />
-        <label for="img">Post Image</label>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </form>
-=======
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Bird Is The Word</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <form onsubmit="app.postsController.addPost()">
-            <div class="modal-body">
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Post Title" />
-                <label for="name">Post Title</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input required type="url" class="form-control" id="img" name="img" placeholder="Post Image" />
-                <label for="img">Post Image</label>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bird Is The Word</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form onsubmit="app.postsController.addPost()">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Post Title" />
+              <label for="name">Post Title</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input required type="url" class="form-control" id="img" name="img" placeholder="Post Image" />
+              <label for="img">Post Image</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
->>>>>>> d02730b584a4990cb0519e97702560e54e26e820
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
