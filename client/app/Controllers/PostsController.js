@@ -15,8 +15,7 @@ function _drawActivePost() {
   if (!appState.activePost) {
     return;
   }
-  setText("active-post-title", appState.activePost.name);
-  setHTML("active-post-details", appState.activePost.MemeCardTemplate);
+  setHTML("active-post-details", appState.activePost.commentsSectionTemplate);
 }
 
 export class PostsController {

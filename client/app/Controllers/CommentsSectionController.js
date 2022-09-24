@@ -15,7 +15,6 @@ function drawTheComments() {
 
 export class CommentsSectionController {
   constructor() {
-    this.getComments();
     appState.on("commentsSection", drawTheComments);
     drawTheComments();
   }
