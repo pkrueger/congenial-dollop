@@ -1,9 +1,11 @@
+import { appState } from "../AppState.js";
 import { commentsSectionService } from "../Services/CommentsSectionService.js";
 
 
 
-function drawcomments() {
-
+function drawComments() {
+  let template = ''
+  appState
 }
 
 

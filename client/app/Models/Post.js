@@ -31,7 +31,7 @@ export class Post {
           </div>
 
           <div class="card-footer d-flex justify-content-between">
-            <div><i class="fa-solid fa-message selectable"></i></div>
+            <div><i class="fa-solid fa-message selectable" onclick=""></i></div>
             <div class="d-flex gap-5">
               <div>
                 <i class="fa-solid fa-arrow-up selectable"> </i>
