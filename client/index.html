@@ -132,43 +132,44 @@
 
               <!-- SECTION: comments half body -->
               <div class="row d-flex justify-content-between mt-5">
-                <div class="col-md-4">meme title</div>
+                <div class="col-md-4">meme title...</div>
                 <div class="col-md-4"><i class="fa-solid fa-arrow-down selectable"></i> 6</div>
                 <div class="col-md-4"><i class="fa-solid fa-arrow-up selectable"></i> 9</div>
               </div>
 
 
               <!-- SECTION: comments half form -->
-              <section class="container flex-end mt-5">
-                <div class="card todoCard bg-secondary">
-                  <div class="card-body">
+              <div class="card bg-secondary container-fluid mt-5">
+                <div class="card-body">
 
-                    <div id="row allComments bg-danger d-flex">
-                      <!-- comments -->
-                      <div class="col-md-2">
-                        <img
-                          src="https://images.unsplash.com/photo-1523287409476-a9e70a25af3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-                          alt="Skateboarding dude" class="commener-pic img-fluid rounded">
-                      </div>
+                  <form onsubmit="app.commentsSectionController.handleSubmit()">
+                    <!-- comments -->
+                    <div id="row">
+                      <div class="d-flex bg-danger allComments elevation-4 rounded p-2">
+                        <div class="col-md-3">
+                          <img
+                            src="https://images.unsplash.com/photo-1523287409476-a9e70a25af3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                            alt="Skateboarding dude" class="commenter-pic img-fluid rounded">
+                        </div>
 
-                      <div class="col-md-6">
-                        <div>commenter name</div>
-                        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+                        <div class="col-md-8">
+                          <h4><strong>user name</strong></h4>
+                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
                       </div>
                     </div>
 
-                    <form class="col-4 mb-3" onsubmit="app.commentsSectionController.handleSubmit()">
-                      <div class="form-group d-flex justify-content-between border-bottom border-2 mt-5">
-                        <input type="text" name="description" placeholder="Add Comment...">
-                        <button class="btn" type="submit">
-                          <i class="mdi mdi-plus"></i>
-                        </button>
-                      </div>
-                    </form>
+                    <!-- add comment + button -->
+                    <div class="form-group d-flex justify-content-between border-bottom border-2 mt-5">
+                      <input type="text" name="description" placeholder="Add Comment...">
+                      <button class="btn" type="submit">
+                        <i class="mdi mdi-plus"></i>
+                      </button>
+                    </div>
+                  </form>
 
-                  </div>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
 
