@@ -3,14 +3,15 @@ import { UnAuthorized } from "../utils/Errors.js";
 
 class PostsService {
   async getPost(postId) {
-    const post = await dbContext.Post.findById(postId)
+    const post = await dbContext.Posts.findById(postId)
       .populate("likes")
       .populate("dislikes")
       .populate("memer");
+
     return post;
   }
   async getPosts() {
-    const posts = dbContext.Post.find()
+    const posts = dbContext.Posts.find()
       .populate("likes")
       .populate("dislikes")
       .populate("memer");
@@ -18,7 +19,7 @@ class PostsService {
   }
 
   addPost(data) {
-    const post = dbContext.Post.create(data);
+    const post = dbContext.Posts.create(data);
     return post;
   }
 
@@ -28,7 +29,7 @@ class PostsService {
     if (userInfo.id != post.memerId) {
       throw new UnAuthorized("Not yur meme");
     }
-    await dbContext.Post.findByIdAndDelete(postId);
+    await dbContext.Posts.findByIdAndDelete(postId);
   }
 }
 
