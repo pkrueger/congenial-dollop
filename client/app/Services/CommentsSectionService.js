@@ -1,12 +1,10 @@
 import { server } from "./AxiosService.js";
 
-
-
 class CommentsSectionService {
-  async getComments() {
-    console.log('service get comments');
+  async getComments(id) {
+    const res = await server.get(`/api/posts/${id}/comments`);
+    console.log(res.data);
   }
 }
 
-
-export const commentsSectionService = new CommentsSectionService()
+export const commentsSectionService = new CommentsSectionService();

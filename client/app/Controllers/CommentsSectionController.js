@@ -2,33 +2,29 @@ import { appState } from "../AppState.js";
 import { commentsSectionService } from "../Services/CommentsSectionService.js";
 import { setHTML } from "../Utils/Writer.js";
 
-
-
 function drawTheComments() {
-  let template = ''
-  appState.commentsSection.forEach((c) => template += c.commentsSectionTemplate)
-  setHTML('comments', template)
-  console.log('comments template: ');
+  let template = "";
+  appState.commentsSection.forEach(
+    (c) => (template += c.commentsSectionTemplate)
+  );
+  setHTML("comments", template);
+  console.log("comments template: ");
 }
 
-
 // drawTheComments()
-
 
 export class CommentsSectionController {
   constructor() {
     this.getComments();
-    appState.on('commentsSection', drawTheComments)
+    appState.on("commentsSection", drawTheComments);
+    drawTheComments();
   }
-
-
 
   async getComments() {
     try {
-      await commentsSectionService.getComments()
+      await commentsSectionService.getComments();
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
-
 }

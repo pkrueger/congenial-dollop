@@ -8,7 +8,7 @@ export class Post {
     this.memerID = data.memerId;
 
     this.postImg = data.postImg;
-    this.postID = data.postID;
+    this.postID = data.postID; //what is this?
 
     this.likes = data.likes;
     this.dislikes = data.dislikes;
@@ -36,8 +36,8 @@ export class Post {
               <i
                 class="fa-solid fa-message selectable"
                 data-bs-toggle="modal"
-                data-bs-target="#commentModal"
-                onclick="drawTheComments()"
+                data-bs-target="#commentsModal"
+                onclick="app.postsController.setActivePost('${this.id}')"
               ></i>
             </div>
             <div class="d-flex gap-5">
@@ -57,3 +57,5 @@ export class Post {
     `;
   }
 }
+
+// onclick = "app.commentsSectionController.drawTheComments()";

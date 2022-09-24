@@ -1,7 +1,9 @@
 import { appState } from "../AppState.js";
+import { commentsSectionService } from "../Services/CommentsSectionService.js";
 import { postsService } from "../Services/PostsService.js";
 import { getFormData } from "../Utils/FormHandler.js";
-import { setHTML } from "../Utils/Writer.js";
+import { Pop } from "../Utils/Pop.js";
+import { setHTML, setText } from "../Utils/Writer.js";
 
 function _drawPosts() {
   let template = "";
@@ -9,10 +11,19 @@ function _drawPosts() {
   setHTML("memeCard", template);
 }
 
+function _drawActivePost() {
+  if (!appState.activePost) {
+    return;
+  }
+  setText("active-post-title", appState.activePost.name);
+  setHTML("active-post-details", appState.activePost.MemeCardTemplate);
+}
+
 export class PostsController {
   constructor() {
     this.getPosts();
     appState.on("posts", _drawPosts);
+    appState.on("activePost", _drawActivePost);
   }
 
   async getPosts() {
@@ -36,6 +47,16 @@ export class PostsController {
       form.reset();
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  async setActivePost(id) {
+    try {
+      postsService.setActivePost(id);
+      await commentsSectionService.getComments(id);
+    } catch (error) {
+      console.error("setActivePost", error);
+      Pop.error(error);
     }
   }
 }
