@@ -1,6 +1,7 @@
 export class Post {
   constructor(data) {
     this.id = data.id;
+    this.name = data.memer.email;
 
     // this.memerImg = data.memer.picture;
     // this.memerName = data.memer.name;
@@ -23,7 +24,7 @@ export class Post {
               alt="profile cat"
               class="img-fluid cardProfilePic rounded selectable"
             />
-            ${this.memerID}
+            ${this.name}
           </div>
 
           <div class="card-body">
