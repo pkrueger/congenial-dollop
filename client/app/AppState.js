@@ -20,6 +20,16 @@ class AppState extends EventEmitter {
   posts = [];
 }
 
+
+
+
+
+
+
+
+
+
+
 export const appState = new Proxy(new AppState(), {
   get(target, prop) {
     isValidProp(target, prop);

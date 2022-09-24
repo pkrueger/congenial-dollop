@@ -1,11 +1,11 @@
 import { AuthController } from "./Controllers/AuthController.js";
 import { PostsController } from "./Controllers/PostsController.js";
-import { VotesController } from "./Controllers/VotesController.js";
+import { CommentsSectionController } from "./Controllers/CommentsSectionController.js";
 
 class App {
   authController = new AuthController();
   postsController = new PostsController();
-  votescontroller = new VotesController();
+  commentsSectioncontroller = new CommentsSectionController();
 }
 
 // @ts-ignore
