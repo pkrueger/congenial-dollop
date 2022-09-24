@@ -15,7 +15,7 @@ export class Post {
 
   get MemeCardTemplate() {
     return /* HTML */ `
-      <div class="col-3">
+      <div class="col-md-3 mb-3">
         <div class="card">
           <div class="card-header bg-secondary">
             <img
