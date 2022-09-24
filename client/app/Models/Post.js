@@ -31,7 +31,14 @@ export class Post {
           </div>
 
           <div class="card-footer d-flex justify-content-between">
-            <div><i class="fa-solid fa-message selectable" onclick="drawTheComments()"></i></div>
+            <div>
+              <i
+                class="fa-solid fa-message selectable"
+                data-bs-toggle="modal"
+                data-bs-target="#commentModal"
+                onclick="drawTheComments()"
+              ></i>
+            </div>
             <div class="d-flex gap-5">
               <div>
                 <i class="fa-solid fa-arrow-up selectable"> </i>
