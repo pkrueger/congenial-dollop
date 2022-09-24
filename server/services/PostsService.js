@@ -6,15 +6,14 @@ class PostsService {
     const post = await dbContext.Post.findById(postId)
       .populate("likes")
       .populate("dislikes")
-      .populate("memer")
+      .populate("memer");
     return post;
   }
   async getPosts() {
     const posts = dbContext.Post.find()
-      // Can you see thisVVV
       .populate("likes")
       .populate("dislikes")
-      .populate("memer")
+      .populate("memer");
     return posts;
   }
 
