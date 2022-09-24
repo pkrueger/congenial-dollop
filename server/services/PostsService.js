@@ -6,7 +6,26 @@ class PostsService {
     const post = await dbContext.Posts.findById(postId)
       .populate("likes")
       .populate("dislikes")
-      .populate("memer");
+      .populate("memer")
+      .populate({
+        path: "comments",
+        model: "Comment",
+        populate: [
+          {
+            path: "likes",
+            model: "CommentLike",
+          },
+          {
+            path: "dislikes",
+            model: "CommentDislike",
+          },
+          {
+            path: "memer",
+            model: "Account",
+            select: "name picture",
+          },
+        ],
+      });
 
     return post;
   }
