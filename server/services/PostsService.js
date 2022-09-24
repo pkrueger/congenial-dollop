@@ -10,7 +10,11 @@ class PostsService {
     return post;
   }
   async getPosts() {
-    const posts = dbContext.Post.find();
+    const posts = dbContext.Post.find()
+      // Can you see thisVVV
+      .populate("likes")
+      .populate("dislikes")
+      .populate("memer")
     return posts;
   }
 
