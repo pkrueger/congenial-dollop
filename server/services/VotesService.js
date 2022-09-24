@@ -1,5 +1,5 @@
 import { dbContext } from "../db/DbContext.js";
-import { BadRequest } from "../utils/Errors.js";
+import { BadRequest, Forbidden } from "../utils/Errors.js";
 
 class VotesService {
   async getDislikes(postId) {
@@ -25,10 +25,20 @@ class VotesService {
     return like;
   }
   async addDislike(data) {
+    const dislikes = await this.getDislikes(data.postId)
+    const dislike = await dislikes.find(d => d.memerId == data.memerId)
+    if (dislike) {
+      return
+    }
     const vote = dbContext.Dislike.create(data);
     return vote;
   }
   async addLike(data) {
+    const likes = await this.getLikes(data.postId)
+    const like = await likes.find(d => d.memerId == data.memerId)
+    if (like) {
+      return
+    }
     const vote = dbContext.Like.create(data);
     return vote;
   }
