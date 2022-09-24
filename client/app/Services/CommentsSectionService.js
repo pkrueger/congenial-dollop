@@ -1,10 +1,10 @@
-import { Post } from "../Models/Post.js";
 import { server } from "./AxiosService.js";
 
 
 
 class CommentsSectionService {
   async getComments() {
+    console.log('service get comments');
   }
 }
 
