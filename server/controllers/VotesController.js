@@ -7,15 +7,33 @@ export class VotesController extends BaseController {
     super("api/votes/:postId");
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post("/like", this.addLike)
-      .post("/dislike", this.addDislike)
-      .delete("/like", this.deleteLike)
-      .get("/likes", this.getlikes)
+      .post("/likes", this.addLike)
+      .post("/dislikes", this.addDislike)
+      .delete("/likes", this.deleteLike)
+      .delete("/dislikes", this.deleteDislike)
+      .get("/likes", this.getLikes)
+      .get("/dislikes", this.getDislikes)
   }
-  async getlikes(req, res, next) {
+  async deleteDislike(req, res, next) {
+    try {
+      const dislikes = await votesService.deleteDislike(req.params, req.userInfo)
+      res.send("Dislike Removed")
+    } catch (error) {
+      next(error)
+    }
+  }
+  async getLikes(req, res, next) {
     try {
       const likes = await votesService.getLikes(req.params.postId)
       res.send(likes)
+    } catch (error) {
+      next(error)
+    }
+  }
+  async getDislikes(req, res, next) {
+    try {
+      const Dislikes = await votesService.getDislikes(req.params.postId)
+      res.send(Dislikes)
     } catch (error) {
       next(error)
     }
