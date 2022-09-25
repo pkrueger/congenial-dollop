@@ -18,6 +18,10 @@ function _drawActivePost() {
   setHTML("active-post-details", appState.activePost.commentsSectionTemplate);
 }
 
+function _comments() {
+  setHTML("");
+}
+
 export class PostsController {
   constructor() {
     this.getPosts();
