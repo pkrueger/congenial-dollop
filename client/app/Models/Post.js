@@ -4,7 +4,7 @@ export class Post {
     this.name = data.memer.email;
 
     this.memerID = data.memerId;
-
+    this.memerPicture = data.memer.picture || "https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1"
     this.postImg = data.postImg;
     this.postID = data.postID; //what is this?
 
@@ -19,7 +19,7 @@ export class Post {
         <div class="card">
           <div class="card-header bg-secondary">
             <img
-              src="${this.postImg}"
+              src="${this.memerPicture}"
               alt="profile cat"
               class="img-fluid cardProfilePic rounded selectable"
             />
@@ -96,11 +96,11 @@ export class Post {
                   <div class="col-md-4">meme title...</div>
                   <div class="col-md-4">
                     <i class="fa-solid fa-arrow-down selectable"></i> ${this
-                      .dislikes}
+        .dislikes}
                   </div>
                   <div class="col-md-4">
                     <i class="fa-solid fa-arrow-up selectable"></i> ${this
-                      .likes}
+        .likes}
                   </div>
                 </div>
 

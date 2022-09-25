@@ -4,7 +4,7 @@ export class CommentSection {
     this.postImg = data.postImg;
     this.name = data.memer.email;
 
-    // this.memerImg = data.memer.picture;
+    this.memerPicture = data.memer.picture || "https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1"
     // this.memerName = data.memer.name;
     this.memerID = data.memerId;
 
@@ -59,8 +59,7 @@ export class CommentSection {
                 <!-- ANCHOR: comments half -->
                 <div class="col-md-4">
                   <img
-                    src="${this.memerID}"
-                    alt="Skateboarding dude"
+                    src="${this.memerPicture}"
                     class="commentSectionProfile img-fluid rounded"
                   />
 
@@ -71,11 +70,11 @@ export class CommentSection {
                     <div class="col-md-4">meme title...</div>
                     <div class="col-md-4">
                       <i class="fa-solid fa-arrow-down selectable"></i> ${this
-                        .dislikes}
+        .dislikes}
                     </div>
                     <div class="col-md-4">
                       <i class="fa-solid fa-arrow-up selectable"></i> ${this
-                        .likes}
+        .likes}
                     </div>
                   </div>
 
