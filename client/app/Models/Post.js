@@ -3,8 +3,6 @@ export class Post {
     this.id = data.id;
     this.name = data.memer.email;
 
-    // this.memerImg = data.memer.picture;
-    // this.memerName = data.memer.name;
     this.memerID = data.memerId;
 
     this.postImg = data.postImg;

@@ -15,6 +15,15 @@ export class CommentSection {
     this.dislikes = data.dislikes;
   }
 
+  get commentTemplate() {
+    return /*html*/ `
+      <div class="mb-3">
+        <p>${this.comment}</p>
+        <p><b>${this.name}</b></p>
+      </div>
+    `;
+  }
+
   get commentsSectionTemplate() {
     return /* HTML */ `
       <div
