@@ -3,6 +3,11 @@ import { Post } from "../Models/Post.js";
 import { server } from "../Services/AxiosService.js";
 
 class PostsService {
+  async getComments(id) {
+    const res = await server.get(`api/posts/${id}/comments`);
+    console.log(res.data);
+    appState.posts = res.data.map((c) => new Post(c));
+  }
   setActivePost(id) {
     const post = appState.posts.find((p) => p.id == id);
     if (!post) {

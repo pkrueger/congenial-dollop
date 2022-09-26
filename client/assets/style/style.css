@@ -2,6 +2,10 @@
   background-color: rgb(212, 212, 32);
 }
 
+body {
+  background-color: rgb(244, 193, 202);
+}
+
 .commenter-pic {
   height: 2rem;
   width: 2rem;

@@ -16,10 +16,7 @@ function _drawActivePost() {
     return;
   }
   setHTML("active-post-details", appState.activePost.commentsSectionTemplate);
-}
-
-function _comments() {
-  setHTML("");
+  setHTML("comments", appState.activePost.Comments);
 }
 
 export class PostsController {
@@ -27,6 +24,15 @@ export class PostsController {
     this.getPosts();
     appState.on("posts", _drawPosts);
     appState.on("activePost", _drawActivePost);
+    appState.on("commentsSection", _drawActivePost);
+  }
+
+  async getComments() {
+    try {
+      await postsService.getComments();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async getPosts() {

@@ -1,3 +1,5 @@
+import { appState } from "../AppState.js";
+
 export class Post {
   constructor(data) {
     this.id = data.id;
@@ -16,14 +18,14 @@ export class Post {
   get MemeCardTemplate() {
     return /* HTML */ `
       <div class="col-md-3 mb-3">
-        <div class="card">
+        <div class="card elevation-1">
           <div class="card-header bg-secondary">
             <img
               src="${this.postImg}"
               alt="profile cat"
               class="img-fluid cardProfilePic rounded selectable"
             />
-            ${this.name}
+            <strong>${this.name}</strong>
           </div>
 
           <div class="card-body">
@@ -58,10 +60,10 @@ export class Post {
 
   get commentsSectionTemplate() {
     return /* HTML */ `
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+      <div class="modal-dialog modal-dialog-centered h-100">
+        <div class="modal-content h-100">
           <!-- SECTION: comments section title -->
-          <div class="modal-header">
+          <div class="modal-header h-100">
             <h5 class="modal-title" id="commentModalToggleLabel">
               Comments Section
             </h5>
@@ -74,62 +76,44 @@ export class Post {
           </div>
 
           <!-- SECTION: modal body -->
-          <div class="modal-body row d-flex justify-content-between">
+          <div class="container-fluid bg-secondary">
             <div class="row" id="comments">
-              <div class="col-md-8">
+              <div class="col-md-8 text-center">
                 <!-- ANCHOR: big meme -->
                 <img src="${this.postImg}" alt="doggo" class="img-fluid" />
               </div>
 
               <!-- ANCHOR: comments half -->
-              <div class="col-md-4">
-                <img
-                  src="${this.memerID}"
-                  alt="Skateboarding dude"
-                  class="commentSectionProfile img-fluid rounded"
-                />
-
-                <strong>${this.name}</strong>
+              <div class="col-md-4 pt-4 px-4">
+                <div class="w-100 text-center">
+                  <u>Meme Poster:</u>
+                  <strong> ${this.name}</strong>
+                </div>
 
                 <!-- SECTION: comments half body -->
-                <div class="row d-flex justify-content-between mt-5">
-                  <div class="col-md-4">meme title...</div>
-                  <div class="col-md-4">
-                    <i class="fa-solid fa-arrow-down selectable"></i> ${this
-                      .dislikes}
+                <div class="row d-flex justify-content-center mt-4">
+                  <div class="col-md-4 text-center">
+                    <i class="fa-solid fa-arrow-down selectable text-red"></i>
+                    ${this.dislikes}
                   </div>
-                  <div class="col-md-4">
-                    <i class="fa-solid fa-arrow-up selectable"></i> ${this
-                      .likes}
+                  <div class="col-md-4 text-center">
+                    <i class="fa-solid fa-arrow-up selectable text-green"></i>
+                    ${this.likes}
                   </div>
                 </div>
 
                 <!-- SECTION: comments half form -->
-                <div class="card bg-secondary container-fluid mt-5">
+                <div class="card bg-light container-fluid mt-4 elevation-1">
                   <div class="card-body">
                     <form
                       onsubmit="app.commentsSectionController.handleSubmit()"
+                      class=""
                     >
+                      <h6>Comments</h6>
                       <!-- comments -->
-                      <div id="row">
-                        <div
-                          class="d-flex bg-light allComments elevation-4 rounded p-2"
-                        >
-                          <div class="col-md-3">
-                            <img
-                              src="https://images.unsplash.com/photo-1523287409476-a9e70a25af3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
-                              alt="Skateboarding dude"
-                              class="commenter-pic img-fluid rounded"
-                            />
-                          </div>
-
-                          <div class="col-md-8">
-                            <h4><strong>${this.name}</strong></h4>
-                            <p>${this.comment}</p>
-                          </div>
-                        </div>
+                      <div class="">
+                        <h6>${this.Comments}</h6>
                       </div>
-
                       <!-- add comment + button -->
                       <div
                         class="form-group d-flex justify-content-between border-bottom border-2 mt-5"
@@ -163,6 +147,15 @@ export class Post {
         </div>
       </div>
     `;
+  }
+
+  get Comments() {
+    let template = "";
+    let comment = appState.commentsSection.forEach(
+      (i) => (template += i.commentTemplate)
+    );
+    console.log(comment);
+    return template;
   }
 }
 
