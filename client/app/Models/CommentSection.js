@@ -4,7 +4,9 @@ export class CommentSection {
     this.postImg = data.postImg;
     this.name = data.memer.email;
 
-    // this.memerImg = data.memer.picture;
+    this.memerPicture =
+      data.memer.picture ||
+      "https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1";
     // this.memerName = data.memer.name;
     this.memerID = data.memerId;
 

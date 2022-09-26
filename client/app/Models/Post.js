@@ -6,7 +6,9 @@ export class Post {
     this.name = data.memer.email;
 
     this.memerID = data.memerId;
-
+    this.memerPicture =
+      data.memer.picture ||
+      "https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1";
     this.postImg = data.postImg;
     this.postID = data.postID; //what is this?
 
@@ -21,7 +23,7 @@ export class Post {
         <div class="card elevation-1">
           <div class="card-header bg-secondary">
             <img
-              src="${this.postImg}"
+              src="${this.memerPicture}"
               alt="profile cat"
               class="img-fluid cardProfilePic rounded selectable"
             />
